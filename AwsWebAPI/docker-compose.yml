@@ -1,5 +1,5 @@
 services:
-  awswebapi:
+  api:
     container_name: awswebapi
     image: awswebapi:latest
     environment:
