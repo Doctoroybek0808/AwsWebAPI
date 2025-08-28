@@ -5,7 +5,8 @@ EXPOSE 443
  
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-RUN dotnet restore "AwsWebAPI.csproj"
+COPY ["AwsWebAPI/AwsWebAPI.csproj", "AwsWebAPI/"]
+RUN dotnet restore "AwsWebAPI/AwsWebAPI.csproj"
 COPY . .
 WORKDIR "/src/AwsWebAPI"
 RUN dotnet build "AwsWebAPI.csproj" -c Release -o /app/build
