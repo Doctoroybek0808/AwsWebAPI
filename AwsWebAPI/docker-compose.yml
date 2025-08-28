@@ -1,0 +1,6 @@
+services:
+  awswebapi:
+    image: ${DOCKER_REGISTRY-}awswebapi
+    build:
+      context: .
+      dockerfile: AwsWebAPI/Dockerfile
